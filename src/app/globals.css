@@ -3,24 +3,85 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #1B4349;
+  --secondary-color: #C8823A;
+  --background-light: #DCE7DC;
+  --primary-box-shadow:
+          -2px -2px 4px 0 #F5F7F5,
+          2px 2px 4px 0 #DCE7DC,
+          -10px -10px 20px 0 #F5F7F5,
+          10px 10px 20px 0 #B6C7B6;
+  --secondary-box-shadow:
+          -2px -2px 4px 0 rgba(229, 149, 66, 0.75),
+          2px 2px 4px 0 rgba(170, 112, 53, 0.85),
+          -10px -10px 20px 0 rgba(222, 142, 59, 0.85),
+          10px 10px 20px 0 #B66E24;
+  --tertiary-box-shadow:
+          -2px -2px 4px 0 #FFFFFF,
+          2px 2px 4px 0 #DCE7DC,
+          -10px -10px 20px 0 #FFFFFF,
+          10px 10px 20px 0 #D9D9D9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-forum: var(--font-forum);
+  --font-poppins: var(--font-poppins);
+  --font-cormorant: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+    overflow-x: hidden;
+    /*font-size: clamp(16px, 14.343px + 0.442vw, 20px);*/
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 5.75rem;
+  font-family: var(--font-forum), serif;
+}
+
+h2 {  
+  font-size: 2.625rem;
+  font-family: var(--font-forum), serif;
+}
+
+h3 {
+  font-size: 2rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+p {
+  font-family: var(--font-cormorant), serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+    font-size: 1.125rem;
+    font-family: var(--font-cormorant), serif;
+}
+
+legend {
+    font-size: 1.125rem;
+    font-family: var(--font-cormorant), serif;
 }

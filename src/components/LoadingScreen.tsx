@@ -32,16 +32,26 @@ export default function LoadingScreen() {
 		try {
 			const heroTimeline = gsap.timeline();
 
+			// Choose mobile animation
 			gsap.to("#welcome_text", { paddingRight: windowWidth / 6 });
 			heroTimeline.to("#step-2", { duration: 0.5, opacity: "100%" });
 			heroTimeline.to("#step-0, #step-0-1", { duration: 0.5, opacity: "0" });
-			gsap.to(ref1.current, {
-				delay: 1,
-				duration: 1,
-				translateX: windowWidth / 6,
-				ease: Power2.easeInOut,
-			});
-			heroTimeline.to("#welcome_text", { opacity: "100%", duration: 1.5 });
+			if (windowWidth < 1024) {
+				gsap.to(ref1.current, {
+					delay: 1,
+					duration: 1,
+					translateY: -windowWidth / 8,
+					ease: Power2.easeInOut,
+				});
+			} else {
+				gsap.to(ref1.current, {
+					delay: 1,
+					duration: 1,
+					translateX: windowWidth / 6,
+					ease: Power2.easeInOut,
+				});
+			}
+			heroTimeline.to("#welcome_text", { opacity: "100%", duration: 1.5, delay: windowWidth < 1024 ? 1 : 0});
 			heroTimeline.to("#background", {
 				delay: 1,
 				opacity: "0",
@@ -59,7 +69,7 @@ export default function LoadingScreen() {
 			id="background"
 		>
 			<div
-				className="absolute left-70 text-right text-[var(--primary-color)] opacity-[0]"
+				className="absolute lg:left-70 text-right text-[var(--primary-color)] opacity-[0]"
 				id="welcome_text"
 			>
 				<h3 className={`${forumSans.variable} font-forum`}>

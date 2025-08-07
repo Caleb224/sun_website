@@ -204,7 +204,7 @@ export default function ContactPage() {
 					<SuccessSplashScreen />
 				) : (
 					<form onSubmit={handleSubmit(onSubmit)}>
-						<div className="grid grid-cols-1 gap-4 lg:grid-rows-[minmax(350px,1fr)_minmax(540px,1fr)] lg:grid-cols-2">
+						<div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[minmax(350px,1fr)_minmax(540px,1fr)]">
 							{/* First grid item: Title */}
 							<div className="bg-[var(--secondary-color)] p-10 text-white">
 								<h1 className="font-bold xl:text-3xl">Contact Us</h1>

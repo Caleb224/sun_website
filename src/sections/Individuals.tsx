@@ -8,7 +8,7 @@ export default function Individuals() {
 				<h2 id="Individuals">FOR INDIVIDUALS</h2>
 				<p className="mt-10 text-2xl">
 					Ultimately, this network is for you, as a prospective client. We
-					worked hard to build a platform that to match you with the right
+					worked hard to build a platform that matches you with the right
 					therapist and gives you confidence in your future.
 					<br />
 					<br />

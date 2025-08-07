@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function MobileCircles() {
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 w-full items-start justify-center gap-4 text-center">
+		<div className="grid w-full grid-cols-1 items-start justify-center gap-4 text-center md:grid-cols-2">
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-[#1B4349] border-solid">
 					<Image
@@ -13,7 +13,7 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5>Creates common ground.</h5>
+				<h5 className="font-forum!">Creates common ground.</h5>
 			</div>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-[#1B4349] border-solid">
@@ -24,7 +24,7 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5>
+				<h5 className="font-forum!">
 					Focuses on getting counselling services to those without support
 					first.
 				</h5>
@@ -38,7 +38,7 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5>Offers client confidentiality and choice of therapist.</h5>
+				<h5 className="font-forum!">Offers client confidentiality and choice of therapist.</h5>
 			</div>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-[#1B4349] border-solid">
@@ -49,7 +49,7 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5>Offers anonymized data of platform performance and usage.</h5>
+				<h5 className="font-forum!">Offers anonymized data of platform performance and usage.</h5>
 			</div>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-[#1B4349] border-solid">
@@ -60,7 +60,7 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5>
+				<h5 className="font-forum!">
 					Streamlines counselling matching by enabling direct contact between
 					client and therapist.
 				</h5>
@@ -74,8 +74,9 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5>
-					Reduces inefficiencies and costs in other church counselling programs.
+				<h5 className="font-forum!">
+					Reduces inefficiencies and costs compared to other church counselling
+					programs.
 				</h5>
 			</div>
 		</div>
@@ -156,7 +157,7 @@ export default function Organizations() {
 				<h2 id="Organizations">For Your Church or Christian Organization</h2>
 				<p className="mt-10 text-2xl">
 					Soul Strength specializes in thoughtfully curating Christian
-					therapists for the mental health and relationship needs your
+					therapists for the mental health and relationship needs in your
 					community, giving you (as a leader) and your members an intuitive and
 					confidential platform to find the right therapist based on your needs.
 					Soul Strength is defined by the quality of therapists in the network

@@ -2,6 +2,52 @@ import Button from "@/components/Button";
 import InfoCircle from "@/components/InfoCircle";
 import Image from "next/image";
 
+function MobileCircles() {
+	return (
+		<div className="grid w-full grid-cols-1 items-start justify-center gap-4 text-center md:grid-cols-2">
+			<div className="flex w-full flex-col items-center justify-center gap-4">
+				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-white border-solid">
+					<Image
+						src={"PuzzlePiece.svg"}
+						alt={"An icon with three interconnected rings"}
+						width={60}
+						height={0}
+					/>
+				</div>
+				<h5 className="font-forum!">This reduces client-therapist mismatch.</h5>
+			</div>
+			<div className="flex w-full flex-col items-center justify-center gap-4">
+				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-white border-solid">
+					<Image
+						src={"CheckCircle.svg"}
+						alt={"An icon with a hand holding a leaf"}
+						width={60}
+						height={0}
+					/>
+				</div>
+				<h5 className="font-forum!">
+					We know that you are much more likely to be effective with your client
+					population and needs when working within your specialty and training.
+				</h5>
+			</div>
+			<div className="flex w-full flex-col items-center justify-center gap-4">
+				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-white border-solid">
+					<Image
+						src={"Leaf.svg"}
+						alt={"An icon with a closed lock"}
+						width={40}
+						height={0}
+					/>
+				</div>
+				<h5 className="font-forum!">
+					We value therapist <strong>sustainability</strong>. We want to avoid
+					therapist burnout by promoting the best fit with your clients.
+				</h5>
+			</div>
+		</div>
+	);
+}
+
 export function TherapistChatBubble() {
 	return (
 		<div className="relative mb-12 lg:block">
@@ -88,7 +134,7 @@ export function TherapistChatBubble() {
 
 export default function Therapists() {
 	return (
-		<section className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3 2xl:grid-rows-[720px_minmax(220px,1fr)]">
+		<section className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3 2xl:grid-rows-[minmax(720px,1fr)_220px]">
 			<div className="hidden min-h-[720px] overflow-hidden rounded-bl-[365px] bg-[#1B4349] xl:relative xl:row-span-2 xl:block xl:h-full">
 				<Image
 					src={"ChairLarge.svg"}
@@ -98,7 +144,7 @@ export default function Therapists() {
 					className="-left-5 xl:-left-20 absolute top-10 xl:top-30"
 				/>
 			</div>
-			<div className="relative grid-cols-2 grid-rows-2 bg-[#C8823A] p-12 text-white xl:col-span-2 2xl:grid">
+			<div className="relative flex flex-col bg-[#C8823A] p-12 text-white xl:col-span-2">
 				<div>
 					<h2 id="Therapists">FOR THERAPISTS</h2>
 					<p className="mt-10 text-2xl">
@@ -107,8 +153,9 @@ export default function Therapists() {
 						concerns that are outside of your expertise or preferred model?
 					</p>
 				</div>
-				<div className="2xl:-top-5 flex items-center justify-center py-24 2xl:absolute 2xl:right-30">
-					<TherapistChatBubble />
+				<div className="flex flex-col items-center justify-center py-24">
+                    <p className="text-2xl font-forum! md:justify-self-center md:self-center md:w-3/5 2xl:w-1/2 font-bold pb-12">Soul Strength connects you with clients that match your specialty and preferred therapeutic models.</p>
+					<MobileCircles />
 				</div>
 				<div className="col-span-2 row-2 mt-6 self-center">
 					<p className="text-2xl lg:pt-6">

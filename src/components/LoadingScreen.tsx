@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap, { Power2 } from "gsap";
 
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { addRefreshMarkerToActiveParallelSegments } from "next/dist/client/components/router-reducer/refetch-inactive-parallel-segments";
 import { Forum } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,12 +19,19 @@ const forumSans = Forum({
 export default function LoadingScreen() {
 	const ref1 = useRef(null);
 	const [windowWidth, setWindowWidth] = useState(0);
+	const [windowHeight, setWindowHeight] = useState(0);
 
 	useEffect(() => {
 		const updateWidth = () => setWindowWidth(window.innerWidth);
+		const updateHeight = () => setWindowHeight(window.innerHeight);
 		updateWidth();
+		updateHeight();
 		window.addEventListener("resize", updateWidth);
-		return () => window.removeEventListener("resize", updateWidth);
+		window.addEventListener("resize", updateHeight);
+		return () => {
+			window.removeEventListener("resize", updateWidth);
+			window.removeEventListener("resize", updateHeight);
+		};
 	}, []);
 
 	useGSAP(() => {
@@ -33,14 +41,25 @@ export default function LoadingScreen() {
 			const heroTimeline = gsap.timeline();
 
 			// Choose mobile animation
-			gsap.to("#welcome_text", { paddingRight: windowWidth / 6 });
+			gsap.to("#welcome_text", {
+				paddingRight: windowWidth < 1024 ? 0 : windowWidth / 6,
+			});
 			heroTimeline.to("#step-2", { duration: 0.5, opacity: "100%" });
 			heroTimeline.to("#step-0, #step-0-1", { duration: 0.5, opacity: "0" });
-			if (windowWidth < 1024) {
+
+			if (windowWidth < 768) {
 				gsap.to(ref1.current, {
 					delay: 1,
 					duration: 1,
-					translateY: -windowWidth / 8,
+					translateY:
+						windowHeight < 500 ? -windowHeight / 3 : -windowHeight / 8,
+					ease: Power2.easeInOut,
+				});
+			} else if (windowWidth < 1024) {
+				gsap.to(ref1.current, {
+					delay: 1,
+					duration: 1,
+					translateY: -windowHeight / 8,
 					ease: Power2.easeInOut,
 				});
 			} else {
@@ -51,7 +70,11 @@ export default function LoadingScreen() {
 					ease: Power2.easeInOut,
 				});
 			}
-			heroTimeline.to("#welcome_text", { opacity: "100%", duration: 1.5, delay: windowWidth < 1024 ? 1 : 0});
+			heroTimeline.to("#welcome_text", {
+				opacity: "100%",
+				duration: 1.5,
+				delay: windowWidth < 1024 ? 1 : 0,
+			});
 			heroTimeline.to("#background", {
 				delay: 1,
 				opacity: "0",
@@ -69,15 +92,21 @@ export default function LoadingScreen() {
 			id="background"
 		>
 			<div
-				className="absolute lg:left-70 text-right text-[var(--primary-color)] opacity-[0]"
+				className="absolute text-left text-[var(--primary-color)] opacity-[0] md:p-0 md:text-right lg:left-70"
 				id="welcome_text"
 			>
-				<h3 className={`${forumSans.variable} font-forum`}>
+				<h3 className={`${forumSans.variable} hidden font-forum md:block`}>
 					Welcome to Soul Strength
 					<br />a Faith-to-Faith network
 					<br />
 					of Christian Therapists
 				</h3>
+				<h4 className={`${forumSans.variable} block font-forum md:hidden`}>
+					Welcome to Soul Strength
+					<br />a Faith-to-Faith network
+					<br />
+					of Christian Therapists
+				</h4>
 			</div>
 			<svg
 				width="448"

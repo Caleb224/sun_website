@@ -185,8 +185,9 @@ function generateEmailContent(data: ContactFormData): string {
                         <p><strong>Email:</strong> ${data.email}</p>
                         <p><strong>Phone:</strong> ${data.phone}</p>
                         <p><strong>User :</strong> ${data.userType === "looking" ? "Looking for a Therapist" : data.userType === "therapist" ? "Therapist" : "Organization/Church"}</p>
-                        ${data.userType === "therapist" && therapistInfo}
-                        ${data.userType === "organization" && organizationInfo}
+                        ${therapistInfo}
+                        ${organizationInfo}
+                        ${individualInfo}
                         ${data.message && `<h3>Message</h3><p>${data.message}</p>`}
 					</div>
 					<!-- Next Steps -->

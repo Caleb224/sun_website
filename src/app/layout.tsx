@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import {Analytics} from "@vercel/analytics/next";
 import { Cormorant_Garamond, Forum, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -70,6 +71,7 @@ export default function RootLayout({
 					<Header />
 					{children}
 					<Footer />
+                    <Analytics />
 				</InitialLoader>
 			</body>
 		</html>

@@ -154,7 +154,7 @@ export async function POST(request: Request) {
 
 		await resend.emails.send({
 			from: "info@soulstrengthnetwork.com",
-			to: "info@soulstrengthnetwork.com",
+			to: "info@soulstrengthnetwork.ca",
 			subject: `New Join Network Request - ${data.email}`,
 			html: emailContent,
 		});

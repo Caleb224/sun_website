@@ -38,7 +38,9 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5 className="font-forum!">Offers client confidentiality and choice of therapist.</h5>
+				<h5 className="font-forum!">
+					Offers client confidentiality and choice of therapist.
+				</h5>
 			</div>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-[#1B4349] border-solid">
@@ -49,7 +51,9 @@ function MobileCircles() {
 						height={0}
 					/>
 				</div>
-				<h5 className="font-forum!">Offers anonymized data of platform performance and usage.</h5>
+				<h5 className="font-forum!">
+					Offers anonymized data of platform performance and usage.
+				</h5>
 			</div>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<div className="flex min-h-[90px] min-w-[90px] items-center justify-center rounded-full border border-[#1B4349] border-solid">

@@ -11,63 +11,69 @@ function FYPITN() {
 			<div className="relative flex w-full grow flex-col items-center">
 				<Link
 					href="/#Individuals"
-					className={`${sharedContainerStyles} top-10 group flex items-center justify-center`}
+					className={`${sharedContainerStyles} group top-10 flex items-center justify-center`}
 				>
 					<Image
 						src={"PersonChatSmall.svg"}
 						alt={"Therapist Chatting Icon"}
 						width={89}
 						height={89}
-						className="hidden md:block group-hover:hidden"
+						className="hidden group-hover:hidden md:block"
 					/>
 					<Image
 						src={"PersonChatSmall.svg"}
 						alt={"Therapist Chatting Icon"}
 						width={60}
 						height={60}
-						className="md:hidden group-hover:hidden"
+						className="group-hover:hidden md:hidden"
 					/>
-                    <p className="hidden group-hover:block md:text-xl! font-poppins! text-[var(--primary-color)]">Individuals</p>
+					<p className="hidden font-poppins! text-[var(--primary-color)] group-hover:block md:text-xl!">
+						Individuals
+					</p>
 				</Link>
 				<Link
 					href="/#Therapists"
-					className={`${sharedContainerStyles} top-40 left-0 md:top-50 group flex items-center justify-center`}
+					className={`${sharedContainerStyles} group top-40 left-0 flex items-center justify-center md:top-50`}
 				>
 					<Image
 						src={"ChairSmall.svg"}
 						alt={"Therapist Chair Icon"}
 						width={89}
 						height={89}
-						className="hidden md:block group-hover:hidden"
+						className="hidden group-hover:hidden md:block"
 					/>
 					<Image
 						src={"ChairSmall.svg"}
 						alt={"Therapist Chair Icon"}
 						width={60}
 						height={60}
-						className="md:hidden group-hover:hidden"
+						className="group-hover:hidden md:hidden"
 					/>
-                    <p className="hidden group-hover:block md:text-xl! font-poppins! text-[var(--primary-color)]">Therapists</p>
+					<p className="hidden font-poppins! text-[var(--primary-color)] group-hover:block md:text-xl!">
+						Therapists
+					</p>
 				</Link>
 				<Link
 					href="/#Organizations"
-					className={`${sharedContainerStyles} top-40 right-0 md:top-50 group flex items-center justify-center`}
+					className={`${sharedContainerStyles} group top-40 right-0 flex items-center justify-center md:top-50`}
 				>
 					<Image
 						src={"ChurchSmall.svg"}
 						alt={"Church Icon"}
 						width={89}
 						height={89}
-						className="hidden md:block group-hover:hidden"
+						className="hidden group-hover:hidden md:block"
 					/>
 					<Image
 						src={"ChurchSmall.svg"}
 						alt={"Church Icon"}
 						width={60}
 						height={60}
-						className="md:hidden group-hover:hidden"
+						className="group-hover:hidden md:hidden"
 					/>
-                    <p className="hidden group-hover:block md:text-xl! font-poppins! text-[var(--primary-color)]">Organizations</p>
+					<p className="hidden font-poppins! text-[var(--primary-color)] group-hover:block md:text-xl!">
+						Organizations
+					</p>
 				</Link>
 			</div>
 			<Image

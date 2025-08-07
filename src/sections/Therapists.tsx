@@ -154,7 +154,10 @@ export default function Therapists() {
 					</p>
 				</div>
 				<div className="flex flex-col items-center justify-center py-24">
-                    <p className="text-2xl font-forum! md:justify-self-center md:self-center md:w-3/5 2xl:w-1/2 font-bold pb-12">Soul Strength connects you with clients that match your specialty and preferred therapeutic models.</p>
+					<p className="pb-12 font-bold font-forum! text-2xl md:w-3/5 md:self-center md:justify-self-center 2xl:w-1/2">
+						Soul Strength connects you with clients that match your specialty
+						and preferred therapeutic models.
+					</p>
 					<MobileCircles />
 				</div>
 				<div className="col-span-2 row-2 mt-6 self-center">

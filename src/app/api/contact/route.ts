@@ -28,7 +28,50 @@ interface ContactFormData {
 }
 
 function generateEmailContent(data: ContactFormData): string {
-	let html = `
+	let therapistInfo = "";
+	let individualInfo = "";
+	let organizationInfo = "";
+
+	if (data.userType === "therapist") {
+		const optionText =
+			data.therapistOption === "join"
+				? "I'd like to be a Soul Strength therapist"
+				: data.therapistOption === "questions"
+					? "I have questions before joining"
+					: data.therapistOption === "other"
+						? "Other"
+						: "Not provided";
+		therapistInfo += `
+			<h3>Therapist Information</h3>
+			<p><strong>Selected Option:</strong> ${optionText}</p>
+		`;
+	}
+
+	if (data.userType === "looking") {
+		individualInfo += `
+			<h3>Client Information</h3>
+			<p><strong>Attends Church:</strong> ${data.attendsChurch === "yes" ? "Yes" : data.attendsChurch === "no" ? "No" : "Not provided"}</p>
+		`;
+
+		if (data.attendsChurch === "yes") {
+			individualInfo += `
+				<p><strong>Church Name:</strong> ${data.churchName || "Not provided"}</p>
+				<p><strong>Church City:</strong> ${data.churchCity || "Not provided"}</p>
+				<p><strong>Pastor's Name:</strong> ${data.pastorName || "Not provided"}</p>
+				<p><strong>Pastor's Email:</strong> ${data.pastorEmail || "Not provided"}</p>
+			`;
+		}
+	}
+
+	if (data.userType === "organization") {
+		organizationInfo += `
+			<h3>Organization Information</h3>
+			<p><strong>Organization Name:</strong> ${data.organizationName || "Not provided"}</p>
+			<p><strong>City:</strong> ${data.organizationCity || "Not provided"}</p>
+		`;
+	}
+
+	return `
 <!DOCTYPE html>
 			<html lang="en">
 			<head>
@@ -142,6 +185,9 @@ function generateEmailContent(data: ContactFormData): string {
                         <p><strong>Email:</strong> ${data.email}</p>
                         <p><strong>Phone:</strong> ${data.phone}</p>
                         <p><strong>User :</strong> ${data.userType === "looking" ? "Looking for a Therapist" : data.userType === "therapist" ? "Therapist" : "Organization/Church"}</p>
+                        ${data.userType === "therapist" && therapistInfo}
+                        ${data.userType === "organization" && organizationInfo}
+                        ${data.message && `<h3>Message</h3><p>${data.message}</p>`}
 					</div>
 					<!-- Next Steps -->
 					<div class="content-section">
@@ -161,54 +207,6 @@ function generateEmailContent(data: ContactFormData): string {
 			</body>
 			</html>
 	`;
-
-	if (data.userType === "therapist") {
-		const optionText =
-			data.therapistOption === "join"
-				? "I'd like to be a Soul Strength therapist"
-				: data.therapistOption === "questions"
-					? "I have questions before joining"
-					: data.therapistOption === "other"
-						? "Other"
-						: "Not provided";
-		html += `
-			<h3>Therapist Information</h3>
-			<p><strong>Selected Option:</strong> ${optionText}</p>
-		`;
-	}
-
-	if (data.userType === "looking") {
-		html += `
-			<h3>Client Information</h3>
-			<p><strong>Attends Church:</strong> ${data.attendsChurch === "yes" ? "Yes" : data.attendsChurch === "no" ? "No" : "Not provided"}</p>
-		`;
-
-		if (data.attendsChurch === "yes") {
-			html += `
-				<p><strong>Church Name:</strong> ${data.churchName || "Not provided"}</p>
-				<p><strong>Church City:</strong> ${data.churchCity || "Not provided"}</p>
-				<p><strong>Pastor's Name:</strong> ${data.pastorName || "Not provided"}</p>
-				<p><strong>Pastor's Email:</strong> ${data.pastorEmail || "Not provided"}</p>
-			`;
-		}
-	}
-
-	if (data.userType === "organization") {
-		html += `
-			<h3>Organization Information</h3>
-			<p><strong>Organization Name:</strong> ${data.organizationName || "Not provided"}</p>
-			<p><strong>City:</strong> ${data.organizationCity || "Not provided"}</p>
-		`;
-	}
-
-	if (data.message) {
-		html += `
-			<h3>Message</h3>
-			<p>${data.message}</p>
-		`;
-	}
-
-	return html;
 }
 
 export async function POST(request: Request) {

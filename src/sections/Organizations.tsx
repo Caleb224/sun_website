@@ -178,7 +178,7 @@ export default function Organizations() {
 				</div>
 			</div>
 			<div className="relative col-span-1 row-1 hidden min-h-[740px] flex-col items-center justify-end gap-6 overflow-hidden rounded-br-[365px] bg-[#DCE7DC] pb-40 xl:col-start-2 xl:flex">
-				<div className="hidden flex-col items-center justify-center gap-6 xl:flex">
+				<div className="hidden flex-col items-center justify-center gap-6 xl:flex z-10">
 					<Button label="Join the Network" href="/join" />
 					<Button label="Sign In" variant="secondary" href="/join" />
 				</div>

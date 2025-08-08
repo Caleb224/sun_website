@@ -9,7 +9,7 @@ export default function Footer() {
 			aria-label="Site footer"
 		>
 			<Link href="#top" className="justify-self-start">
-				<Image src="/footer_logo.svg" alt="Logo" width={50} height={50} />
+				<Image src="/footer_logo.svg" alt="Soul Strength Network Logo - Return to top of page" width={50} height={50} />
 			</Link>
 			<nav className="flex w-3/4 flex-col gap-4 justify-self-start py-10 font-poppins lg:ml-10 xl:w-1/2">
 				<div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:gap-10">

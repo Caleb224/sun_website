@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://soulstrengthnetwork.com/sitemap.xml
+
+# Block common bot directories
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

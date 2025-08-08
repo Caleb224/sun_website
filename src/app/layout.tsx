@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 		type: "website",
 		siteName: "Soul Strength Network",
 		locale: "en_US",
-		url: "https://soulstrengthnetwork.com"
+		url: "https://soulstrengthnetwork.ca"
 	},
 	twitter: {
 		card: "summary_large_image",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 		creator: "@soulstrengthnet"
 	},
 	alternates: {
-		canonical: "https://soulstrengthnetwork.com"
+		canonical: "https://soulstrengthnetwork.ca"
 	},
 	category: "Healthcare"
 };
@@ -89,8 +89,8 @@ export default function RootLayout({
 							"@type": "Organization",
 							"name": "Soul Strength Network",
 							"description": "A curated network connecting Christian therapists with Christian clients for faith-based mental health support.",
-							"url": "https://soulstrengthnetwork.com",
-							"logo": "https://soulstrengthnetwork.com/footer_logo.svg",
+							"url": "https://soulstrengthnetwork.ca",
+							"logo": "https://soulstrengthnetwork.ca/footer_logo.svg",
 							"sameAs": [],
 							"contactPoint": {
 								"@type": "ContactPoint", 
@@ -99,7 +99,7 @@ export default function RootLayout({
 							},
 							"areaServed": {
 								"@type": "Country",
-								"name": "United States"
+								"name": "Canada"
 							},
 							"serviceType": [
 								"Christian Therapy Network",

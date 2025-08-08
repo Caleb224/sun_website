@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next'
- 
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://soulstrengthnetwork.com'
-  
+  const baseUrl = 'https://soulstrengthnetwork.ca'
+
   return [
     {
       url: baseUrl,

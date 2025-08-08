@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 		"Christian therapy practice growth"
 	],
 	openGraph: {
-		title: "Join Our Network - Soul Strength Network", 
+		title: "Join Our Network - Soul Strength Network",
 		description:
 			"Join Soul Strength Network as a licensed Christian therapist or faith-based organization. Connect with clients who share your values.",
-		url: "https://soulstrengthnetwork.com/join"
+		url: "https://soulstrengthnetwork.ca/join"
 	},
 	alternates: {
-		canonical: "https://soulstrengthnetwork.com/join"
+		canonical: "https://soulstrengthnetwork.ca/join"
 	}
 };

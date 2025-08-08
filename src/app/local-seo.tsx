@@ -13,7 +13,7 @@ export default function LocalSEOStructuredData() {
 		],
 		"areaServed": {
 			"@type": "Country",
-			"name": "United States"
+			"name": "Canada"
 		},
 		"hasOfferingCatalog": {
 			"@type": "OfferingCatalog",
@@ -66,12 +66,12 @@ export default function LocalSEOStructuredData() {
 			{
 				"@type": "ContactAction",
 				"name": "Contact Soul Strength Network",
-				"url": "https://soulstrengthnetwork.com/contact"
+				"url": "https://soulstrengthnetwork.ca/contact"
 			},
 			{
 				"@type": "JoinAction",
 				"name": "Join the Network", 
-				"url": "https://soulstrengthnetwork.com/join"
+				"url": "https://soulstrengthnetwork.ca/join"
 			}
 		]
 	};

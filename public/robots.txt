@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://soulstrengthnetwork.com/sitemap.xml
+Sitemap: https://soulstrengthnetwork.ca/sitemap.xml
 
 # Block common bot directories
 Disallow: /api/
